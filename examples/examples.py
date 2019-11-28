@@ -46,7 +46,7 @@ def main() -> None:
         print(mquest.format_questions(
             heading=day,
             questions=mquest.generate_mixed_multiplications(
-                multipliers=list([2, 3, 4, 5, 6, 8, 10])),
+                multipliers=[2, 3, 4, 5, 6, 8, 10]),
         ))
 
 
