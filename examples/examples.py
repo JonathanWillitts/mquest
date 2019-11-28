@@ -24,7 +24,7 @@ def main() -> None:
     # Generate a single set of division by 4 questions in shuffled order,
     # format, and print
     print(mquest.format_questions(
-        heading="รท (divide by) 4 questions",
+        heading="÷ (divide by) 4 questions",
         questions=mquest.generate_divisions(divisor=4)
     ))
 
