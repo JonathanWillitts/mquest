@@ -6,7 +6,6 @@ import argparse
 import calendar
 import pathlib
 import random
-from random import shuffle
 from typing import List
 
 
@@ -18,7 +17,7 @@ def generate_multiplications(multiplier: int, shuffle_order: bool = False
 
     if shuffle_order:
         # Randomise order
-        shuffle(multiplicands)
+        random.shuffle(multiplicands)
 
     # Build multiplication questions list, and return
     questions = []
@@ -36,7 +35,7 @@ def generate_mixed_multiplications(multipliers: [int]) -> List[str]:
     multiplicands = list(range(1, 13))
 
     # Randomise order of multiplicands
-    shuffle(multiplicands)
+    random.shuffle(multiplicands)
 
     # Build multiplication questions list, and return
     questions = []
@@ -50,7 +49,7 @@ def generate_divisions(divisor: int) -> List[str]:
     """Returns a list of division questions for the given divisor."""
     # Define dividends (i.e. numbers 1-12), and randomise order
     dividends = [index * divisor for index in range(1, 13)]
-    shuffle(dividends)
+    random.shuffle(dividends)
 
     # Build division questions list, and return
     questions = []
