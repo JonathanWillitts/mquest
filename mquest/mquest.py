@@ -93,7 +93,7 @@ def main() -> None:
         type=int,
         nargs='+',
         help="The operand(s) to apply to the specified mode "
-             "(e.g. used to multiply or divide by). "
+             "(used to multiply or divide by). "
              "For mixed multiplications specify multiple operands.",
         required=True,
     )
@@ -101,7 +101,7 @@ def main() -> None:
         '-s', '--shuffle',
         action='store_true',
         help="Shuffle order of generated questions "
-             "(applies to multiplications mode only).",
+             "(applies to multiplication mode only).",
         default=False,
     )
     parser.add_argument(
