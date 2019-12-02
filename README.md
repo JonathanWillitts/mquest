@@ -240,7 +240,7 @@ for day in study_days:
 
 
 ## Contributions
-Contributions to improve mQuest are welcomed, in the form of suggestions, bug fixes, new features, or anything else you see fit. Please submit a [pull request](/pulls).
+Contributions to improve mQuest are welcomed, in the form of suggestions, bug fixes, new features, or anything else you see fit. Please submit a [pull request](https://github.com/JonathanWillitts/mquest/pulls).
 
 ## License
 mQuest is licensed under the [MIT License](LICENSE)
