@@ -80,7 +80,7 @@ def format_questions(heading: str, questions: List[str]) -> str:
 def main() -> None:
     """Offers CLI when when py-mquest run as a standalone script."""
     parser = argparse.ArgumentParser(
-        description='Python Mathematics Question Generator.')
+        description='mQuest: Python Mathematics Question Generator.')
     parser.add_argument(
         '-m', '--mode',
         choices=('m', 'mm', 'd'),
