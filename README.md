@@ -183,9 +183,15 @@ Sunday:
 ```
 
 ### As a module
-Note, all these examples can be found in the [examples.py](mquest\examples.py) file:
+To run the examples file as as script, use:
+```cmd
+> python -m examples.examples
+```
+
+Note: all the examples below can be found in the [examples.py](examples/examples.py) file.  
+
 ```python
-import mquest
+from mquest import mquest
 
 # Generate a raw list of ordered 11 times table questions
 times_11_questions = mquest.generate_multiplications(multiplier=11)
@@ -214,7 +220,7 @@ to generate a set of questions for each day of the week:
 ```python
 import calendar
 
-import mquest  # if not already imported
+from mquest import mquest # if not already imported
 
 # Define list of study days (i.e. days to generate questions for),
 # for each day of the week, starting on Friday
@@ -234,7 +240,7 @@ for day in study_days:
     print(mquest.format_questions(
         heading=day,
         questions=mquest.generate_mixed_multiplications(
-            multipliers=list([2, 3, 4, 5, 6, 8, 10])),
+        multipliers=[2, 3, 4, 5, 6, 8, 10]),
     ))
 ```
 
