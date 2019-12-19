@@ -1,4 +1,4 @@
-"""Documented mquest examples."""
+"""Documented examples for mQuest, when imported as a module."""
 import calendar
 
 from mquest import mquest
