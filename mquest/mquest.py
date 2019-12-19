@@ -1,4 +1,4 @@
-"""mquest:  Python Mathematics Question Generator
+"""mQuest:  Python Mathematics Question Generator
 
 Code to generate multiplication, mixed multiplication and division questions.
 """
@@ -78,7 +78,7 @@ def format_questions(heading: str, questions: List[str]) -> str:
 
 
 def main() -> None:
-    """Offers CLI when when py-mquest run as a standalone script."""
+    """Offers CLI when when mQuest run as a standalone script."""
     parser = argparse.ArgumentParser(
         description='mQuest: Python Mathematics Question Generator.')
     parser.add_argument(
