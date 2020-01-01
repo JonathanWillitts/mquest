@@ -14,9 +14,11 @@ As a bonus, to aid study it can generate a different set of questions for each d
   * [Installation](#installation)
   * [Usage](#usage)
     + [With CLI](#with-cli)
-      - [Command line options](#Command-line-options)
-      - [Command line examples](#Command-line-examples)
+      - [Command line options](#command-line-options)
+      - [Command line examples](#command-line-examples)
     + [As a module](#as-a-module)
+      - [General examples](#general-examples)
+      - [Generate files for ALL times tables and divisions](#generate-files-for-all-times-tables-and-divisions)
   * [Contributions](#contributions)
   * [License](#license)
 
@@ -183,7 +185,10 @@ Sunday:
 ```
 
 ### As a module
-To run the examples file as as script, use:
+mQuest code can also be imported into your own package as a module.  
+
+#### General examples
+To run the `examples.py` file as as script, use:
 ```cmd
 > python -m examples.examples
 ```
@@ -244,6 +249,23 @@ for day in study_days:
     ))
 ```
 
+#### Generate files for ALL times tables and divisions
+To generate separate question files (ordered times tables, unordered times tables and divisions), for each for each day of the week, for each number between 1-12, see the example found in [generate_all.py](examples/generate_all.py).
+
+To run the `generate_all.py` file as as script, modify the following lines to define the first study day of the week (the day to start generating questions for) and the output path (where the generated files will be written):
+```python
+# Define start day (of each week)
+study_days = mquest.get_days_of_week(first_day=calendar.SUNDAY)
+
+# Define path to write files to, and ensure it exists
+output_path = pathlib.Path('output')
+```
+
+then use the following to generate the files:
+```cmd
+> python -m examples.generate_all
+```
+which will generate 36 files in the specified `output_path` directory.
 
 ## Contributions
 Contributions to improve mQuest are welcomed, in the form of suggestions, bug fixes, new features, or anything else you see fit. Please submit a [pull request](https://github.com/JonathanWillitts/mquest/pulls).
