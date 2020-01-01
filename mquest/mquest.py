@@ -153,7 +153,7 @@ def main() -> None:
     # If output file specified
     if args.file is not None:
         # Write to output file
-        with args.file.open('w') as out_file:
+        with args.file.open(mode='w', encoding='utf-8') as out_file:
             out_file.writelines(questions)
     else:
         # Print to stdout
