@@ -29,10 +29,13 @@ jobs:
         python -V
         python -c "import sys; print(sys.version)"
 
-    - name: Install Pylint
+    - name: Install Linters
       run: |
         python -m pip install --upgrade pip
-        pip install pylint
+        pip install flake8 pylint
+
+    - name: Run Flake8
+      run: flake8 mquest examples/examples.py
 
     - name: Run Pylint
       run: pylint mquest examples/examples.py
