@@ -6,15 +6,18 @@ on:
 
 jobs:
   lint:
-
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
-        python-version: [3.6, 3.7, 3.8, 3.x]
+        python-version: [3.6, 3.7, 3.x]
+
+    env:
+      things_to_lint: 'mquest examples/examples.py'
 
     steps:
     - uses: actions/checkout@v1
+
     - name: Hello, world test
       run: echo Hello, world!
 
@@ -24,18 +27,31 @@ jobs:
         python-version: ${{ matrix.python-version }}
         architecture: 'x64'
 
-    - name: Print Python version
+    - name: Log Python version
       run: |
         python -V
         python -c "import sys; print(sys.version)"
 
-    - name: Install Linters
+    - name: Log things to lint
+      run: echo things_to_lint=$things_to_lint
+      shell: bash
+
+    - name: Install linters
       run: |
         python -m pip install --upgrade pip
         pip install flake8 pylint
 
+    - name: Log installed package versions
+      run: pip freeze
+
     - name: Run Flake8
-      run: flake8 mquest examples/examples.py
+      run: flake8 $things_to_lint
+      shell: bash
 
     - name: Run Pylint
-      run: pylint mquest examples/examples.py
+      run: pylint $things_to_lint
+      shell: bash
+
+    - name: Run isort
+      run: isort -rc $things_to_lint --check-only --diff
+      shell: bash
