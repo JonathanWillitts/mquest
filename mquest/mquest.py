@@ -27,7 +27,7 @@ def generate_multiplications(multiplier: int, shuffle_order: bool = False
     return questions
 
 
-def generate_mixed_multiplications(multipliers: [int]) -> List[str]:
+def generate_mixed_multiplications(multipliers: List[int]) -> List[str]:
     """Returns a list of mixed multiplication questions for the given
     multipliers (plural).
     """
@@ -63,8 +63,8 @@ def generate_divisions(divisor: int) -> List[str]:
 def get_days_of_week(first_day: int = calendar.MONDAY) -> List[str]:
     """Returns a list of ordered days, starting with the specified day."""
     calendar.setfirstweekday(first_day)
-    return list(calendar.day_name[calendar.firstweekday():]
-                + calendar.day_name[0:calendar.firstweekday()])
+    return (list(calendar.day_name[calendar.firstweekday():])
+            + list(calendar.day_name[0:calendar.firstweekday()]))
 
 
 def format_questions(heading: str, questions: List[str]) -> str:
