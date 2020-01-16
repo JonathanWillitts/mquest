@@ -1,4 +1,6 @@
 # mQuest: Python Mathematics Question Generator
+[![](https://github.com/JonathanWillitts/mquest/workflows/CI%20Linting/badge.svg)](https://github.com/JonathanWillitts/mquest/actions?query=workflow%3A"CI+Linting")
+
 Generates multiplication and division questions in a variety of formats, e.g.
 - Multiplication questions (in order) *e.g. 7 times tables* 
 - Multiplication questions (in mixed order) *e.g. 9 times tables questions in random order*
