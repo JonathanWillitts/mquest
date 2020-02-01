@@ -13,7 +13,7 @@ jobs:
         python-version: [3.6, 3.7, 3.x]
 
     env:
-      things_to_lint: 'mquest examples/examples.py'
+      things_to_lint: 'mquest examples/examples.py examples/generate_all.py'
 
     steps:
     - uses: actions/checkout@v1
